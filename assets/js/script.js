@@ -53,9 +53,9 @@ function renderTareas() {
   for (const t of arrayTareas) {
     //recorrido del arreglo de tareas para validar si la tarea stá completada o no y de acuerdo a eso marcarla visualmente;
     if (t.estado == false)
-      html += `<li id="${t.id}">${t.id} - ${t.tarea}<span class="close" onclick=borrar(${t.id})>\u00D7</span></li>`;
+      html += `<li id="${t.id}">${t.id} - ${t.tarea}<span class="close" onclick=borrar(${t.id})><i class="fa-solid fa-trash-can"></i></span></li>`;
     else
-      html += `<li id="${t.id}" class="checked">${t.id} - ${t.tarea}<span class="close" onclick=borrar(${t.id})>\u00D7</span></li>`; // cuando el estado de la tarea es completado se asigana  la clase "checked" para mostrarla visualmenete marcada en el HTML
+      html += `<li id="${t.id}" class="checked" >${t.id} - ${t.tarea}<span class="close" onclick=borrar(${t.id})><i class="fa-solid fa-trash-can"></i></span></li>`; // cuando el estado de la tarea es completado se asigana  la clase "checked" para mostrarla visualmenete marcada en el HTML
   }
  
   listatareas.innerHTML = html;
