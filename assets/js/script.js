@@ -26,7 +26,7 @@ renderTareas();
 //AGREGAR NUEVA TAREA
 function Agregar() {
   if (tarea.value === "") {
-    alert("Debe escribir algo para ser agregado!");
+    alert("Debe agregar una tarea!");
   } else {
     arrayTareas.push({
       id: Date.now(),
@@ -71,14 +71,13 @@ list.addEventListener(
       ev.target.classList.toggle("checked"); //Marcar checked a través de un cambio de clase
 
       for (let i = 0; i < arrayTareas.length; i++) {
-        //REcorrido de la arreglo de tareas
+        //REcorrido del arreglo de tareas
         if (arrayTareas[i].id === parseInt(ev.target.id)) {
           //se compara el indice del arreglo con el clickeado
           arrayTareas[i].estado = !arrayTareas[i].estado; //Una vez localizado se cambia el estado según se clickee sobre el elemento
         }
       }
     }
-    console.log("arrayTareas", arrayTareas);
     renderTareas();
   },
   false
